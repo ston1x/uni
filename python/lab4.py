@@ -1,5 +1,3 @@
-import math
-
 matrix = [[1,4,5],
          [-5,-12,8]]
 
