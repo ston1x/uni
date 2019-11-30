@@ -1,7 +1,7 @@
 import math
+
 try:
-    print("Enter the value of x: ")
-    x = float(input())
+    x = float(input("Enter the value of x: "))
     # positiveness = "positive" if x > 0 else "negative"
     if x > 0:
         positiveness = "positive"
