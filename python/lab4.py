@@ -7,10 +7,15 @@ def generate_from_keyboard():
     matrix = []
     for i in range(rows):
         matrix.append([])
-        for i in range(rows):
-            for j in range(columns):
-                matrix[i].append(j)
-                matrix[i][j]=0
+    for i in range(rows):
+        for j in range(columns):
+            matrix[i].append(j)
+            matrix[i][j] = 0
+
+    for i in range(rows):
+        for j in range(columns):
+            print("entry in row ", i, "column", j)
+            matrix[i][j] = int(input())
     print(matrix)
 
 def generate_random_matrix():
