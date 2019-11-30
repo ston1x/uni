@@ -20,6 +20,7 @@ def generate_random_matrix():
     rows = random.randint(1,4)
     columns = random.randint(1,4)
     matrix = random.randint(10, size=(rows,columns)).tolist()
+    return matrix
 
 def build_matrix():
     if input("Do you want to enter the matrix manually? y/n: ") == "y":
@@ -29,14 +30,18 @@ def build_matrix():
 
     print(enter_by_user)
 
-    matrix = generate_from_keyboard if enter_by_user else generate_random_matrix
+    matrix = generate_from_keyboard() if enter_by_user else generate_random_matrix()
     return matrix
+
+def divisible_by_four(matrix):
+    flattened = [y for x in matrix for y in x]
+    divisible_by_four = [x for x in flattened if x % 4 == 0]
+    return divisible_by_four
 
 try:
     matrix = build_matrix()
-    import code; code.interact(local=dict(globals(), **locals()))
-    flattened = [y for x in matrix for y in x]
-    divisible_by_four = len([x for x in flattened if x % 4 == 0])
-    print(divisible_by_four)
+    divisible_by_four = divisible_by_four(matrix)
+    print(f'{len(divisible_by_four)} elements can be divided by 4: {divisible_by_four}')
+    # print(divisible_by_four)
 except Exception as e:
     print(e)
